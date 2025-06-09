@@ -11,7 +11,7 @@ The goal of this test is to evaluate your understanding of SQL, dbt, and dimensi
 - **Set Up dbt**
 - **Explore Staging Models**
 - **Build Dimension & Fact Models**:  
-   Based on the relevant staging models, create the following:
+   Based on the relevant staging models, create the following:dbt   
    - **Dimension Models**: Identify and create necessary dimension tables. These can be date dimensions, user dimensions, product dimensions, etc. depending on the staging data provided.
    - **Fact Models**: Build out the fact tables that centralize the measures and keys.
    

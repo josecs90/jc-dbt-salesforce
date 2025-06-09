@@ -1,0 +1,19 @@
+models:
+  - name: fact_opportunities
+    columns:
+      - name: opportunity_id
+        tests:
+          - unique
+          - not_null
+      - name: campaign_id
+        tests:
+          - relationships:
+              to: ref('dim_campaigns')
+              field: campaign_id
+              severity: warn
+      - name: amount
+        tests:
+          - not_null
+      - name: history_changes
+        tests:
+          - not_null
