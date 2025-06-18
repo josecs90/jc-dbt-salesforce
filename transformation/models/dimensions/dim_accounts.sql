@@ -1,4 +1,4 @@
-   {{ config(materialized='table') }}
+   {{ config(materialized='table' , unique_key='account_id') }}
    SELECT
        account_id,
        name AS account_name,

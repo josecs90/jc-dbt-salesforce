@@ -1,4 +1,4 @@
- {{ config(materialized='table') }}
+ {{ config(materialized='table', unique_key='campaign_id') }}
    SELECT
       campaign_id,
       name as campaign_name,

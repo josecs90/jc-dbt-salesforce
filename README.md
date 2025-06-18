@@ -38,3 +38,24 @@ Your submission will be evaluated based on:
 - Robustness of tests and validations.
 
 Best of luck, and we look forward to reviewing your models!
+
+
+ ## JC DBT PROJECT:
+
+  ### Overview
+  This dbt project transforms Salesforce data into a dimensional data warehouse with four dimension tables (`dim_leads`, `dim_campaigns`, `dim_contacts`, `dim_accounts`) and one fact table (`fact_opportunities`). It uses dbt 1.6.18 with DuckDB 1.3.0.
+
+  ### Models
+  - **dim_leads**: Deduplicated leads with conversion details.
+  - **dim_campaigns**: Marketing campaigns with name and dates.
+  - **dim_contacts**: Contacts linked to accounts.
+  - **dim_accounts**: Accounts with industry and revenue.
+  - **fact_opportunities**: Opportunities with amount and history changes, linked to dimensions.
+
+  ### Tests
+  - Tests for `fact_opportunities` validate uniqueness, not-null, and relationships (with `severity: warn` for relationships).
+  - Test is on the facts model as temporary workaround due issues with the dbt version 
+  
+  ### Tips
+  - Used `check_data.py` to query the database
+  - Results in `target/run_results.json` and `logs/dbt.log`.

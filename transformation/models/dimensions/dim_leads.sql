@@ -1,4 +1,4 @@
- {{ config(materialized='table') }}
+ {{ config(materialized='table', unique_key='lead_id')}}
    SELECT
       lead_id,
       convertedaccountid as converted_account_id,

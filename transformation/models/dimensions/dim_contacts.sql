@@ -1,4 +1,4 @@
- {{ config(materialized='table') }}
+ {{ config(materialized='table', unique_key='campaign_id') }}
    SELECT
        contact_id,
        accountid as account_id,

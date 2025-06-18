@@ -9,7 +9,7 @@ conn = duckdb.connect('dbt.duckdb')
 #query = "SELECT contact_id,count(1) FROM dbt.staging.stg_salesforce__contact group by contact_id having count(1)>1"
 #query = "SELECT isdeleted,count(1) FROM dbt.staging.stg_salesforce__account group by isdeleted"
 #query = "SELECT count(1) FROM dbt.staging.stg_salesforce__account"
-query = "SELECT * FROM dbt.fact.fact_opportunities"
+query = "SELECT * FROM dbt.facts.fact_opportunities limit 10"
 results = conn.sql(query).fetchall()
 columns = [desc[0] for desc in conn.sql(query).description]
 print("Columns :", columns)
